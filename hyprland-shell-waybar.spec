@@ -3,7 +3,7 @@
 
 Name:           hyprland-shell-waybar
 Version:        0.0.0
-Release:        %0\{?dist}
+Release:        %0{?dist}
 Summary:        Waybar config and themes made for using with hyprland
 Url:            https://pagure.io/%{srcname}
 # Sources can be obtained by
