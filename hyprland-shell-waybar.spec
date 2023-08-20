@@ -25,7 +25,7 @@ Source0:        %{name}-%{version}.tar.gz
 Waybar theme for using with Hyprland made for hyprland-shell
 
 %prep
-%define xdgWaybar        %{_sysconfdir}/xdg/waybar
+%define xdgWaybar %{_sysconfdir}/xdg/waybar
 %autosetup
 
 %build
