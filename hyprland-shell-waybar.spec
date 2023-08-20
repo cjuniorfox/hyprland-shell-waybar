@@ -20,12 +20,12 @@ Requires:       waybar
 
 Source0:        %{name}-%{version}.tar.gz
 
-%define xdgwaybar        %{_sysconfdir}/xdg/waybar
 
 %description
 Waybar theme for using with Hyprland made for hyprland-shell
 
 %prep
+%define xdgwaybar        %{_sysconfdir}/xdg/waybar
 %autosetup
 
 %build
