@@ -20,6 +20,8 @@ Requires:       waybar
 
 Source0:        %{name}-%{version}.tar.gz
 
+%define xdgwaybar        %{_sysconfdir}/xdg/waybar
+
 %description
 Waybar theme for using with Hyprland made for hyprland-shell
 
@@ -29,21 +31,24 @@ Waybar theme for using with Hyprland made for hyprland-shell
 %build
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/xdg/waybar/scripts/
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/xdg/waybar/styles/
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/xdg/waybar/
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/xdg/waybar/scripts/
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/xdg/waybar/styles/
+mkdir -p $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+mkdir -p $RPM_BUILD_ROOT%{xdgWaybar}/styles/
+install -d $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+install -d $RPM_BUILD_ROOT%{xdgWaybar}/styles/
 install -d $RPM_BUILD_ROOT%{_bindir}
+install hyprland $RPM_BUILD_DIR%{xdgWaybar}
+install transparent.css $RPM_BUILD_DIR%{xdgWaybar}/styles/
+install under_rainbow.css $RPM_BUILD_DIR%{xdgWaybar}/styles/
+install -m 755 dunst_notify  $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
-install -m 755 dunst_notify  $RPM_BUILD_ROOT%{_sysconfdir}/xdg/waybar/scripts/
+
 
 %files
-%{_sysconfdir}/xdg/waybar/hyprland
-%{_sysconfdir}/xdg/waybar/styles/transparent.css
-%{_sysconfdir}/xdg/waybar/styles/under_rainbow.css
-%{_sysconfdir}/xdg/waybar/styles/transparent.css
-%{_sysconfdir}/xdg/waybar/scripts/dunst_notify
+%{xdgWaybar}/hyprland
+%{xdgWaybar}/styles/transparent.css
+%{xdgWaybar}/styles/under_rainbow.css
+%{xdgWaybar}/styles/transparent.css
+%{xdgWaybar}/scripts/dunst_notify
 %{_bindir}/start_waybar_hyprland
 
 %changelog
