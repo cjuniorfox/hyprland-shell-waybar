@@ -33,6 +33,7 @@ Waybar theme for using with Hyprland made for hyprland-shell
 %install
 mkdir -p $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 mkdir -p $RPM_BUILD_ROOT%{xdgWaybar}/styles/
+install -d $RPM_BUILD_ROOT%{_bindir}
 install hyprland $RPM_BUILD_ROOT%{xdgWaybar}
 install transparent.css $RPM_BUILD_ROOT%{xdgWaybar}/styles/
 install under_rainbow.css $RPM_BUILD_ROOT%{xdgWaybar}/styles/
