@@ -2,8 +2,8 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        0.0.0
-Release:        0%{?dist}
+Version:        1.0.0
+Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with hyprland
 Url:            https://pagure.io/%{srcname}
 # Sources can be obtained by
@@ -31,7 +31,7 @@ Waybar theme for using with Hyprland made for hyprland-shell
 %build
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+install -d $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -d $RPM_BUILD_ROOT%{xdgWaybar}/styles/
 install -d $RPM_BUILD_ROOT%{_bindir}
 install hyprland $RPM_BUILD_ROOT%{xdgWaybar}
@@ -50,3 +50,5 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Sun Aug 20 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.0-1
+- Initial relase
