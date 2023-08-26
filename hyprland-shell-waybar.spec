@@ -19,6 +19,7 @@ BuildArch:      noarch
 Requires:       waybar
 Requires:       checkupdate
 Requires:       fontawesome6-free
+Requires:       rofi-shutdown-menu
 
 Source0:        %{name}-%{version}.tar.gz
 
