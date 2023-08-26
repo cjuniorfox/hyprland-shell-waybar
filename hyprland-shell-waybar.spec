@@ -17,6 +17,8 @@ BuildRequires: systemd-rpm-macros
 
 BuildArch:      noarch
 Requires:       waybar
+Requires:       checkupdate
+Requires:       fontawesome6-free
 
 Source0:        %{name}-%{version}.tar.gz
 
