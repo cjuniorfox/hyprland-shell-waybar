@@ -16,7 +16,7 @@ License:        GPLv3
 BuildRequires: systemd-rpm-macros
 
 BuildArch:      noarch
-Requires:       waybar
+Requires:       waybar-hyprland
 Requires:       checkupdate
 Requires:       fontawesome6-free
 Requires:       rofi-shutdown-menu
