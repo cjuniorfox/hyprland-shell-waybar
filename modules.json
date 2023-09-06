@@ -55,9 +55,9 @@
 		"on-click" : "hyprctl dispatch submap reset"
 	},
 	"custom/hyprland_keyboard":{
-		"exec": "hypr-get-keyboard-layout | jq -r '{text:(.short+\" \"+.short_variant),tooltip:(.keymap),alt:(.layout) }' -c --unbuffered",
+		"exec": "hyprland-get-keyboard-layout | jq -r '{text:(.short+\" \"+.short_variant),tooltip:(.keymap),alt:(.layout) }' -c --unbuffered",
 		"return-type":"json",
-		"on-click": "hypr-change-keyboard-layout",
+		"on-click": "hyprland-change-keyboard-layout",
 		"format":" {}"
 	},
 	"custom/updates": {
