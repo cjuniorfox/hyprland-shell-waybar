@@ -21,6 +21,7 @@ Requires:       checkupdate
 Requires:       fontawesome6-free
 Requires:       rofi-shutdown-menu
 Requires:       jq
+Requires:       hyprland-keyboard-changer
 
 Source0:        %{name}-%{version}.tar.gz
 
