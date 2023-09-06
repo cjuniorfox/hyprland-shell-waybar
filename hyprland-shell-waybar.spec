@@ -20,6 +20,7 @@ Requires:       waybar-hyprland
 Requires:       checkupdate
 Requires:       fontawesome6-free
 Requires:       rofi-shutdown-menu
+Requires:       jq
 
 Source0:        %{name}-%{version}.tar.gz
 
@@ -35,21 +36,21 @@ Waybar theme for using with Hyprland made for hyprland-shell
 
 %install
 install -d $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
-install -d $RPM_BUILD_ROOT%{xdgWaybar}/styles/
 install -d $RPM_BUILD_ROOT%{_bindir}
-install hyprland $RPM_BUILD_ROOT%{xdgWaybar}
-install transparent.css $RPM_BUILD_ROOT%{xdgWaybar}/styles/
-install under_rainbow.css $RPM_BUILD_ROOT%{xdgWaybar}/styles/
-install -m 755 dunst_notify  $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+install hyprland.css                 $RPM_BUILD_ROOT%{xdgWaybar}
+install hyprland.json                $RPM_BUILD_ROOT%{xdgWaybar}
+install modules.json                 $RPM_BUILD_ROOT%{xdgWaybar}
+install -m 755 dunst_notify          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+install -m 755 keys_blocked          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 
 
 %files
-%{xdgWaybar}/hyprland
-%{xdgWaybar}/styles/transparent.css
-%{xdgWaybar}/styles/under_rainbow.css
-%{xdgWaybar}/styles/transparent.css
+%{xdgWaybar}/hyprland.json
+%{xdgWaybar}/hyprland.css
+%{xdgWaybar}/modules.json
 %{xdgWaybar}/scripts/dunst_notify
+%{xdgWaybar}/scripts/keys_blocked
 %{_bindir}/start_waybar_hyprland
 
 %changelog

@@ -1,17 +1,11 @@
 {
-	"layer": "top",
-	"height" : 30,
-	"spacing": 4,
-	"modules-left": ["custom/menu","wlr/workspaces","hyprland/window"],
-	"modules-center": ["clock"],
-	"modules-right": ["disk","memory","cpu","battery","tray","custom/dunst","custom/block_keybind","idle_inhibitor","custom/updates","pulseaudio","custom/shutdown"],
 	"custom/menu": {
 		"format" : "",
 		"on-click" : "sleep .3 && ~/.config/rofi/menu.sh",
 		"on-click-right" : "sleep .3 && ~/.config/rofi/menurun.sh"
 	},
 	"clock": {
-        	"format": "{:%a %H:%M}",
+        	"format": "{:%H:%M}",
         	"format-alt": "{:%A, %B %d, %Y (%R)}",
         	"tooltip-format": "<tt><small>{calendar}</small></tt>",
         	"calendar": {
@@ -57,8 +51,14 @@
     		"ignored-sinks": ["Easy Effects Sink"]
 	},
 	"custom/block_keybind":{
-		"exec": "~/.config/hypr/scripts/blockkeys",
+		"exec": "/etc/xdg/waybar/scripts/keys_blocked",
 		"on-click" : "hyprctl dispatch submap reset"
+	},
+	"custom/hyprland_keyboard":{
+		"exec": "hypr-get-keyboard-layout | jq -r '{text:(.short+\" \"+.short_variant),tooltip:(.keymap),alt:(.layout) }' -c --unbuffered",
+		"return-type":"json",
+		"on-click": "hypr-change-keyboard-layout",
+		"format":" {}"
 	},
 	"custom/updates": {
 		"exec": "tail -f /tmp/update.pipe 2> /dev/null",
@@ -83,23 +83,30 @@
 		"on-click": "activate",
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
-		"format": "{id} {icon}",
+		"format": "{icon}",
 		"format-icons": {
-			"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": "",
-			"active": "",
+			"urgent": "",
+			"active":  "",
 			"default": ""
-		},
+		}
 	},
-	"wlr/workspaces": {
-     		"format": "{icon}",
-		"on-click" : "activate",
+	"sway/language": {
+    		"format": "{short} {variant}"
+	},
+	"wlr/workspaces" : {
+        	"on-click": "activate",
+        	"active-only": false,
+        	"all-outputs": true,
+        	"format": "{icon}",
     	 	"on-scroll-up": "hyprctl dispatch workspace e+1",
-     		"on-scroll-down": "hyprctl dispatch workspace e-1"
-	},
+     		"on-scroll-down": "hyprctl dispatch workspace e-1",
+        	"format-icons": {
+			"urgent": "",
+			"active":  "",
+			"default": "",
+            	"sort-by-number": true
+        }
+    	},
 	"idle_inhibitor": {
       		"format": "{icon}",
       		"format-icons": {
@@ -112,15 +119,14 @@
     		"format": "{ifname}",
     		"format-wifi": " {essid} ({signalStrength}%)",
     		"format-ethernet": " {ipaddr}/{cidr}",
-    		"format-disconnected": "", //An empty format will hide the module.
+    		"format-disconnected": "", 
     		"tooltip-format": "{ifname} via {gwaddr} ",
     		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     		"tooltip-format-ethernet": "{ifname} ",
-    		"tooltip-format-disconnected": "Disconnected",
+    		"tooltip-format-disconnected": "Disconnected"
 	},
 	"tray": {
-		"spacing" : 10,
-	//	"icon-size" : 16
+		"spacing" : 10
     	},
 	"memory":{
 		"format":" {used:0.1f}G/{total:0.1f}G"
@@ -136,6 +142,6 @@
     		"format-charging": "{icon} {capacity}%",
     		"format-plugged": "{icon} {capacity}%",
     		"format": "{icon} {capacity}%",
-    		"format-icons": ["", "", "", "", ""],
-	} 
-}
+    		"format-icons": ["", "", "", "", ""]
+	}
+}	

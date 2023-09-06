@@ -1,13 +1,28 @@
 #!/bin/bash
-STYLE_PATH="/etc/xdg/waybar/styles/${WAYBAR_STYLE}.css"
-STYLE_USER_PATH="$HOME/.config/waybar/styles/${WAYBAR_STYLE}.css"
-killall waybar;
-if [[ -f "${STYLE_USER_PATH}" ]]; then
-	waybar --config /etc/xdg/waybar/hyprland --style "${STYLE_USER_PATH}" $@;
+[[ ! -d ~/.config/waybar/ ]] && mkdir -p ~/.config/waybar
+[[ ! -f ~/.config/waybar/quick-launcher.json ]] && \
+	echo '{"custom/firefox":{"format": "","on-click": "flatpak run org.mozilla.firefox || firefox","tooltip": false},
+	"custom/terminal":{"format": "","on-click": "rofi-sensible-terminal","tooltip": false}}' | \
+	jq > ~/.config/waybar/quick-launcher.json
+[[ ! -f ~/.config/waybar/modules-left.json ]] && \
+	echo '{"modules-left":["custom/menu","custom/firefox","custom/terminal","hyprland/window"]}' |\
+	jq >  ~/.config/waybar/modules-left.json
+set -x
+HOME_CONFIG="$HOME/.config/waybar/config.json"
+HOME2_CONFIG="$HOME/.config/waybar/config"
+XDG_WAYBAR_CONFIG="/etc/xdg/waybar/hyprland.json"
+if [[ -f "$HOME/.config/waybar/hyprland.css" ]]; then
+	XDG_WAYBAR_STYLE="$HOME/.config/waybar/hyprland.css"
 else
-	if [[ -f "${STYLE_PATH}" ]]; then
-		waybar --config /etc/xdg/waybar/hyprland --style "${STYLE_PATH}" $@;
-	else
-		waybar --config /etc/xdg/waybar/hyprland $@;
-	fi
+	XDG_WAYBAR_STYLE="/etc/xdg/waybar/hyprland.css"
+fi
+killall waybar;
+if [[ -f "${HOME_CONFIG}" ]]; then
+	waybar --config "${HOME_CONFIG}" --style "${XDG_WAYBAR_STYLE}" $@;
+elif [[ -f "${HOME2_CONFIG}" ]]; then
+		waybar --config "${HOME2_CONFIG}" $@;
+elif [[ -f  "${XDG_WAYBAR_CONFIG}" ]]; then
+		waybar --config "${XDG_WAYBAR_CONFIG}" --style "${XDG_WAYBAR_STYLE}" $@;
+else
+	waybar $@;
 fi
