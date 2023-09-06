@@ -7,10 +7,6 @@
 		"~/.config/waybar/quick-launcher.json",
 		"~/.config/waybar/modules-left.json"
 	],
-	"modules-left": [
-		"custom/menu",
-		"hyprland/window"
-	],
 	"modules-center": [
 		"hyprland/workspaces"
 	],
