@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"height" : 32,
-	"spacing": 4,
+	"spacing": 6,
 	"include": [
 		"/etc/xdg/waybar/modules.json",
 		"~/.config/waybar/quick-launcher.json",
