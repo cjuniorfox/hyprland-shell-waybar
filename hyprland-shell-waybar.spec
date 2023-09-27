@@ -53,6 +53,7 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{xdgWaybar}/modules.json
 %{xdgWaybar}/scripts/dunst_notify
 %{xdgWaybar}/scripts/keys_blocked
+%{xdgWaybar}/scripts/close_window
 %{_bindir}/start_waybar_hyprland
 
 %changelog
