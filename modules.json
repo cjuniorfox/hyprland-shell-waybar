@@ -79,6 +79,11 @@
 		"format":"",
 		"on-click": "sleep .3 && rofi-shutdown-menu"
 	},
+	"custom/close_window": {
+		"format":"{}",
+		"exec": "/etc/xdg/waybar/scripts/close_window",
+		"on-click": "hyprctl dispatch killactive"	
+	},
 	"hyprland/workspaces": {
 		"on-click": "activate",
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
