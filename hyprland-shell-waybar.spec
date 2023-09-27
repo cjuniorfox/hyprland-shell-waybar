@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.10
+Version:        1.0.11
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with hyprland
 Url:            https://pagure.io/%{srcname}
@@ -43,6 +43,7 @@ install hyprland.json                $RPM_BUILD_ROOT%{xdgWaybar}
 install modules.json                 $RPM_BUILD_ROOT%{xdgWaybar}
 install -m 755 dunst_notify          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 keys_blocked          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 
 
@@ -55,6 +56,9 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Wed Sep 27 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.11-1
+- added the close button (cjuniorfox@gmail.com)
+
 * Mon Sep 25 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.10-1
 - dependence changes (cjuniorfox@gmail.com)
 
