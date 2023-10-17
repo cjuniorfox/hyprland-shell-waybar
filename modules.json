@@ -61,7 +61,7 @@
 		"format":" {}"
 	},
 	"custom/updates": {
-		"exec": "tail -f /tmp/update.pipe 2> /dev/null",
+		"exec": "[ ! -f /tmp/update.pipe ] && echo '' > /tmp/update.pipe; tail -f /tmp/update.pipe 2> /dev/null",
 		"on-click" : "sleep .1 && update",
 		"format" : " {}"
 	},
