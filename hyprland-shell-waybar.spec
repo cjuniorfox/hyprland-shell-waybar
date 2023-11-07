@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.16
+Version:        1.0.17
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with hyprland
 Url:            https://pagure.io/%{srcname}
@@ -57,6 +57,9 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.17-1
+- 
+
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.16-1
 - taskbar' (cjuniorfox@gmail.com)
 
