@@ -252,12 +252,10 @@ label:focus {
 
 #taskbar button {
     border-radius: 10px;
-    transition: background 0.3s ease-in-out;
 }
 #taskbar button.active {
     background:rgba(130,128,131,0.4);;
     border-radius: 10px;
-    transition: background 0.3s ease-in-out;
 }
 
 #tray > .passive {
