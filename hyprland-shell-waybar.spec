@@ -18,7 +18,7 @@ BuildRequires: systemd-rpm-macros
 BuildArch:      noarch
 Requires:       waybar
 Requires:       checkupdate
-Requires:       fontawesome6-free
+Requires:       fontawesome6-free or fontawesome-6-free-fonts
 Requires:       rofi-shutdown-menu
 Requires:       jq
 Requires:       hyprland-keyboard-changer
