@@ -1,6 +1,6 @@
 {
 	"custom/menu": {
-		"format" : "",
+		"format" : "",
 		"on-click" : "sleep .3 && ~/.config/rofi/menu.sh",
 		"on-click-right" : "sleep .3 && ~/.config/rofi/menurun.sh"
 	},
