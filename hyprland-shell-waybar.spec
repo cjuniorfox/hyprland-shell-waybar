@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.21
+Version:        1.0.22
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with hyprland
 Url:            https://pagure.io/%{srcname}
@@ -57,6 +57,9 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Thu May 02 2024 Junior <cjuniorfox@gmail.com> 1.0.22-1
+- changed the icon (junior@my-distrobox.zentac)
+
 * Thu Dec 28 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.21-1
 - changes into the dependencies (cjuniorfox@gmail.com)
 
