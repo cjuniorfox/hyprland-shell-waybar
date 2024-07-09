@@ -20,6 +20,7 @@ Requires:       waybar
 Requires:       checkupdate
 Requires:       (fontawesome-6-free-fonts or fontawesome6-free)
 Requires:       rofi-shutdown-menu
+Requires:       rofi-audio-output-selector
 Requires:       jq
 Requires:       hyprland-keyboard-changer
 

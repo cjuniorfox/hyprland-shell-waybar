@@ -48,6 +48,7 @@
     		},
     		"scroll-step": 1,
     		"on-click": "pavucontrol",
+		"on-click-right": "select_audio_output",
     		"ignored-sinks": ["Easy Effects Sink"]
 	},
 	"custom/block_keybind":{
