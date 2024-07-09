@@ -2,33 +2,24 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.22
+Version:        1.0.23
 Release:        1%{?dist}
-Summary:        Waybar config and themes made for using with hyprland
+Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
 # Sources can be obtained by
 # git clone https://pagure.io/hyprland-shell-waybar
-# cd rofi-shutdown-menu
+# cd hyprland-shell-waybar
 # tito build --tgz
 License:        GPLv3
 
-
-BuildRequires: systemd-rpm-macros
-
+BuildRequires:  systemd-rpm-macros
 BuildArch:      noarch
-Requires:       waybar
-Requires:       checkupdate
-Requires:       (fontawesome-6-free-fonts or fontawesome6-free)
-Requires:       rofi-shutdown-menu
-Requires:       rofi-audio-output-selector
-Requires:       jq
-Requires:       hyprland-keyboard-changer
+Requires:       jq, waybar, (fontawesome-6-free-fonts or fontawesome6-free), checkupdate, rofi-shutdown-menu, rofi-audio-output-selector, hyprland-keyboard-changer
 
 Source0:        %{name}-%{version}.tar.gz
 
-
 %description
-Waybar theme for using with Hyprland made for hyprland-shell
+Waybar theme for using with Hyprland made for hyprland-shell.
 
 %prep
 %define xdgWaybar %{_sysconfdir}/xdg/waybar
@@ -47,7 +38,6 @@ install -m 755 keys_blocked          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 
-
 %files
 %{xdgWaybar}/hyprland.json
 %{xdgWaybar}/hyprland.css
@@ -58,74 +48,75 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Mon Jul 08 2024 Junior <cjuniorfox@gmail.com> 1.0.23-1
+- chore: added the option to select the output device (cjuniorfox@gmail.com)
+
 * Thu May 02 2024 Junior <cjuniorfox@gmail.com> 1.0.22-1
-- changed the icon (junior@my-distrobox.zentac)
+- Changed the icon.
 
 * Thu Dec 28 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.21-1
-- changes into the dependencies (cjuniorfox@gmail.com)
+- Updated dependencies.
 
 * Thu Dec 28 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.20-1
-- changes into the dependencies (cjuniorfox@gmail.com)
+- Updated dependencies.
 
 * Thu Nov 09 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.19-1
-- menu icon changed (cjuniorfox@gmail.com)
+- Changed menu icon.
 
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.18-1
-- 
+- Minor updates.
 
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.17-1
-- 
+- Minor updates.
 
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.16-1
-- taskbar' (cjuniorfox@gmail.com)
+- Updated taskbar.
 
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.15-1
-- taskbar' (cjuniorfox@gmail.com)
-- taskbar' (cjuniorfox@gmail.com)
+- Updated taskbar.
 
 * Tue Oct 17 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.14-1
-- creation for empty file for checkupdate when starts waybar
-  (cjuniorfox@gmail.com)
+- Created empty file for checkupdate when starting Waybar.
 
 * Wed Sep 27 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.13-1
-- fixes for proper build (cjuniorfox@gmail.com)
+- Fixed build issues.
 
 * Wed Sep 27 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.12-1
-- renamed (cjuniorfox@gmail.com)
+- Renamed files.
 
 * Wed Sep 27 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.11-1
-- added the close button (cjuniorfox@gmail.com)
+- Added close button.
 
 * Mon Sep 25 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.10-1
-- dependence changes (cjuniorfox@gmail.com)
+- Updated dependencies.
 
 * Sat Sep 16 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.9-1
-- added disk free space as default (cjuniorfox@gmail.com)
+- Added disk free space as default.
 
 * Thu Sep 14 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.8-1
-- changes into spacing (cjuniorfox@gmail.com)
+- Updated spacing.
 
 * Tue Sep 12 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.7-1
-- removal of quick launch styles (cjuniorfox@gmail.com)
+- Removed quick launch styles.
 
 * Wed Sep 06 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.6-1
-- fix issue regarding the keyboard change script (cjuniorfox@gmail.com)
+- Fixed issue with keyboard change script.
 
 * Wed Sep 06 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.5-1
-- removal of modules left from main config (cjuniorfox@gmail.com)
+- Removed modules left from main config.
 
 * Wed Sep 06 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.4-1
-- added keyboard-changer dependency (cjuniorfox@gmail.com)
-- refactoring. custom scripts, launcher, new gui (cjuniorfox@gmail.com)
+- Added keyboard-changer dependency.
+- Refactored custom scripts, launcher, and GUI.
 
 * Tue Aug 29 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.3-1
-- change dependency (cjuniorfox@gmail.com)
+- Changed dependency.
 
 * Sat Aug 26 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.2-1
-- added dependencies (cjuniorfox@gmail.com)
+- Added dependencies.
 
 * Sat Aug 26 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.1-1
-- added dependencies (cjuniorfox@gmail.com)
+- Added dependencies.
 
 * Sun Aug 20 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.0-1
-- Initial relase
+- Initial release.
