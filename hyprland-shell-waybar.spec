@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.23
+Version:        1.0.24
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -48,6 +48,9 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Tue Jul 09 2024 Junior <cjuniorfox@gmail.com> 1.0.24-1
+- chore: removal for the checkupdate requirement (cjuniorfox@gmail.com)
+
 * Mon Jul 08 2024 Junior <cjuniorfox@gmail.com> 1.0.23-1
 - chore: added the option to select the output device (cjuniorfox@gmail.com)
 
