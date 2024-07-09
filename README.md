@@ -86,7 +86,7 @@ Here is an example of the Waybar configuration:
         "custom/shutdown"
     ]
 }
-```json
+```
 
 ## Usage
 
