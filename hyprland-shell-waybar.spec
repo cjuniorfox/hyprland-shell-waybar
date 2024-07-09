@@ -14,7 +14,7 @@ License:        GPLv3
 
 BuildRequires:  systemd-rpm-macros
 BuildArch:      noarch
-Requires:       jq, waybar, (fontawesome-6-free-fonts or fontawesome6-free), checkupdate, rofi-shutdown-menu, rofi-audio-output-selector, hyprland-keyboard-changer
+Requires:       jq, waybar, (fontawesome-6-free-fonts or fontawesome6-free), rofi-shutdown-menu, rofi-audio-output-selector, hyprland-keyboard-changer
 
 Source0:        %{name}-%{version}.tar.gz
 
