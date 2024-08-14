@@ -61,11 +61,11 @@
 		"on-click": "hyprland-change-keyboard-layout",
 		"format":" {}"
 	},
-	"custom/updates": {
-		"exec": "[ ! -f /tmp/update.pipe ] && echo '' > /tmp/update.pipe; tail -f /tmp/update.pipe 2> /dev/null",
-		"on-click" : "sleep .1 && update",
-		"format" : " {}"
-	},
+	"custom/updates": { 
+        "exec": "python3 /usr/share/checkupdate/check_for_updates.py", 
+        "interval": 600, 
+        "click-left": "python3 /usr/share/checkupdate/update_menu.py"
+    },
 	"custom/dunst" : {
 		"exec": "/etc/xdg/waybar/scripts/dunst_notify",
     		"on-click": "dunstctl set-paused toggle",
