@@ -64,6 +64,7 @@
 	"custom/updates": { 
 		"exec": "python3 /usr/share/checkupdate/check_for_updates.py", 
         	"interval": 600, 
+		"return-type": "json",
         	"on-click": "python3 /usr/share/checkupdate/update_menu.py"
     	},
 	"custom/dunst" : {
