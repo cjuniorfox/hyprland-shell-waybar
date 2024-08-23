@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.25
+Version:        1.0.27
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -48,6 +48,13 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Wed Aug 14 2024 Junior <cjuniorfox@gmail.com> 1.0.27-1
+- added type as json (cjuniorfox@gmail.com)
+
+X# Create your changelog entry below:
+* Wed Aug 14 2024 Junior <cjuniorfox@gmail.com> 1.0.26-1
+- fix left click for checkupdate (cjuniorfox@gmail.com)
+
 * Wed Aug 14 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.25-1
 - updated the checkupdate (cjuniorfox@gmail.com)
 - fixed README formatting error (cjuniorfox@gmail.com)
