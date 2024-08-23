@@ -64,7 +64,9 @@
 	"custom/updates": { 
         "exec": "python3 /usr/share/checkupdate/check_for_updates.py", 
         "interval": 600, 
-        "click-left": "python3 /usr/share/checkupdate/update_menu.py"
+        "click-left": "python3 /usr/share/checkupdate/update_menu.py",
+	"format" : " {}"
+	
     },
 	"custom/dunst" : {
 		"exec": "/etc/xdg/waybar/scripts/dunst_notify",
