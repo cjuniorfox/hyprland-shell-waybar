@@ -65,7 +65,7 @@
         	"exec": "python3 /usr/share/checkupdate/check_for_updates.py", 
         	"interval": 600, 
         	"on-click": "python3 /usr/share/checkupdate/update_menu.py",
-		"format" : " {}",
+		"format" : "{}",
 		"return-type":"json"
 	
     	},
