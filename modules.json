@@ -64,7 +64,7 @@
 	"custom/updates": { 
         	"exec": "python3 /usr/share/checkupdate/check_for_updates.py", 
         	"interval": 600, 
-        	"click-left": "python3 /usr/share/checkupdate/update_menu.py",
+        	"on-click": "python3 /usr/share/checkupdate/update_menu.py",
 		"format" : " {}",
 		"return-type":"json"
 	
