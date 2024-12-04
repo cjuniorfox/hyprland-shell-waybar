@@ -14,7 +14,7 @@ License:        GPLv3
 
 BuildRequires:  systemd-rpm-macros
 BuildArch:      noarch
-Requires:       jq, waybar, (fontawesome-6-free-fonts or fontawesome6-free), rofi-shutdown-menu, rofi-audio-output-selector, hyprland-keyboard-changer
+Requires:       jq, python3-pyquery, waybar, (fontawesome-6-free-fonts or fontawesome6-free), rofi-shutdown-menu, rofi-audio-output-selector, hyprland-keyboard-changer
 
 Source0:        %{name}-%{version}.tar.gz
 
@@ -36,6 +36,7 @@ install modules.json                 $RPM_BUILD_ROOT%{xdgWaybar}
 install -m 755 dunst_notify          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 keys_blocked          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
+install weather.py                   $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 
 %files
@@ -45,6 +46,7 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{xdgWaybar}/scripts/dunst_notify
 %{xdgWaybar}/scripts/keys_blocked
 %{xdgWaybar}/scripts/close_window
+%{xdgWaybar}/scripts/weather.py
 %{_bindir}/start_waybar_hyprland
 
 %changelog
