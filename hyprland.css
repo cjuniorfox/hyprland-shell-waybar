@@ -105,7 +105,8 @@ button:hover {
 #custom-updates,
 #custom-dunst,
 #custom-shutdown,
-#custom-terminal
+#custom-terminal,
+#custom-weather
 #mpd {
     padding: 0 5px;
     color: rgba(223,219,226,1);
@@ -146,6 +147,9 @@ button:hover {
     border-bottom: 3px solid #66cc99;
 }
 
+#custom-weather {
+    border-bottom: 3px solid #964B00;
+}
 #clock {
     border-bottom: 3px solid #64727D;
 }

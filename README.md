@@ -99,6 +99,14 @@ Here is an example of the Waybar configuration:
 - **Audio Output**: Click to switch audio outputs.
 - **Shutdown**: Click to open the shutdown menu.
 
+## Weather
+
+To properly get your weather location, check the location ID at https://weather.com/en-IN/weather/today.
+Check for your city's forecast and copy the ID from the URL.
+Example:
+Nova Friburgo - RJ is `2bf40a7aa6288f1090ab35632ce451a0014b11f0b4c370b8cd4d9a018d880a3a`
+export the environment variable `WEATHER_ID` with the value.
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.

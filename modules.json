@@ -4,6 +4,11 @@
 		"on-click" : "sleep .3 && ~/.config/rofi/menu.sh",
 		"on-click-right" : "sleep .3 && ~/.config/rofi/menurun.sh"
 	},
+	"custom/weather": {
+		"exec": "python /etc/xdg/waybar/scripts/weather.py ",
+		"restart-interval": 600,
+		"return-type": "json"
+	},
 	"clock": {
         	"format": "{:%H:%M}",
         	"format-alt": "{:%A, %B %d, %Y (%R)}",

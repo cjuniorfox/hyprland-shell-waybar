@@ -22,6 +22,7 @@
 		"pulseaudio",
 		"battery",
 		"clock",
+		"custom/weather",
 		"tray",
 		"custom/shutdown"
 	]
