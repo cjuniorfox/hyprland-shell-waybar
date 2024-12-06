@@ -4,7 +4,7 @@
     font-size: 13px;
 }
 window#waybar {
-    background-color: rgba(43, 48, 59, 0);
+    background-color: rgba(43, 48, 59, 0.4);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
