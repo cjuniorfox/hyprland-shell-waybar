@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.33
+Version:        1.0.34
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -50,6 +50,9 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Fri Dec 06 2024 Junior <cjuniorfox@gmail.com> 1.0.34-1
+- replaced the shebang (cjuniorfox@gmail.com)
+
 * Tue Dec 03 2024 Junior <cjuniorfox@gmail.com> 1.0.33-1
 - added readme and module to waybar (cjuniorfox@gmail.com)
 - added weather script (cjuniorfox@gmail.com)
