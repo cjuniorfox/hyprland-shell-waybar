@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.40
+Version:        1.0.41
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -50,6 +50,10 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Wed Dec 11 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.41-1
+- Air quality Index: added translation to acronym, the category information and
+  colored category (cjuniorfox@gmail.com)
+
 * Tue Dec 10 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.40-1
 - fixed wind speed problem (cjuniorfox@gmail.com)
 
