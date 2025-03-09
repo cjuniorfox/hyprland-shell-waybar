@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.44
+Version:        1.0.45
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -50,6 +50,9 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+* Sun Mar 09 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.45-1
+- fixed chance of rain percentage (cjuniorfox@gmail.com)
+
 * Sun Mar 09 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.44-1
 - fixed some issue regarding sky status (cjuniorfox@gmail.com)
 
