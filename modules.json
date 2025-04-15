@@ -56,6 +56,18 @@
 		"on-click-right": "select_audio_output",
     		"ignored-sinks": ["Easy Effects Sink"]
 	},
+	"custom/audio_idle_inhibitor": {
+		"format": "{icon}",
+		"exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+		"exec-if": "which sway-audio-idle-inhibit",
+		"return-type": "json",
+		"format-icons": {
+			"output": "",
+			"input": "",
+			"output-input": "  ",
+			"none": ""
+		}
+	},
 	"custom/block_keybind":{
 		"exec": "/etc/xdg/waybar/scripts/keys_blocked",
 		"on-click" : "hyprctl dispatch submap reset"

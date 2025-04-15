@@ -20,6 +20,7 @@
 		"custom/hyprland_keyboard",
 		"custom/updates",
 		"pulseaudio",
+                "custom/audio_idle_inhibitor",
 		"battery",
 		"clock",
 		"custom/weather",

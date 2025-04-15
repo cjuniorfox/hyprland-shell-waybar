@@ -106,6 +106,7 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#custom-audio_idle_inhibitor,
 #custom-menu,
 #custom-block_keybind,
 #custom-updates,
@@ -196,7 +197,7 @@ label:focus {
     border-bottom: 3px solid #9b59b6;
 }
 
-#disk {
+#disk, #custom-audio_idle_inhibitor{
     border-bottom: 3px solid #964B00;
 }
 
