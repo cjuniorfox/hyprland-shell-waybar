@@ -50,6 +50,7 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{_bindir}/start_waybar_hyprland
 
 %changelog
+<<<<<<< HEAD
 * Mon Apr 07 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.46-1
 - updates to weather.py (cjuniorfox@gmail.com)
 
@@ -77,6 +78,10 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 
 * Tue Dec 10 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.38-1
 - updated the theme to a simpler approach (cjuniorfox@gmail.com)
+=======
+* Tue Apr 15 2025 Junior <cjuniorfox@gmail.com> 1.0.38-1
+- Added audio sinalization waybar (cjuniorfox@gmail.com)
+>>>>>>> ccbc3fe (Automatic commit of package [hyprland-shell-waybar] release [1.0.38-1].)
 
 * Mon Dec 09 2024 Junior <cjuniorfox@gmail.com> 1.0.37-1
 - updated the weather command (cjuniorfox@gmail.com)
