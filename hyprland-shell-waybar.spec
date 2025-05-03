@@ -21,6 +21,8 @@ Source0:        %{name}-%{version}.tar.gz
 %description
 Waybar theme for using with Hyprland made for hyprland-shell.
 
+%{!?_userunitdir:%global _userunitdir %{_prefix}/lib/systemd/user}
+
 %prep
 %define xdgWaybar %{_sysconfdir}/xdg/waybar
 %autosetup
@@ -37,7 +39,9 @@ install -m 755 dunst_notify          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 keys_blocked          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install weather.py                   $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
-install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
+install -Dm755 start_waybar_hyprland %{buildroot}%{_bindir}/start_waybar_hyprland
+install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprland-shell-waybar.service
+install -Dm644 hyprland-shell-waybar.desktop %{buildroot}%{_datadir}/applications/hyprland-shell-waybar.desktop
 
 %files
 %{xdgWaybar}/hyprland.json
@@ -48,6 +52,8 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 %{xdgWaybar}/scripts/close_window
 %{xdgWaybar}/scripts/weather.py
 %{_bindir}/start_waybar_hyprland
+%{_userunitdir}/hyprland-shell-waybar.service
+%{_datadir}/applications/hyprland-shell-waybar.desktop
 
 %changelog
 * Tue Apr 15 2025 Junior <cjuniorfox@gmail.com> 1.0.47-1
@@ -55,7 +61,6 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
   (cjuniorfox@gmail.com)
 - Added audio sinalization waybar (cjuniorfox@gmail.com)
 
-<<<<<<< HEAD
 * Mon Apr 07 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.46-1
 - updates to weather.py (cjuniorfox@gmail.com)
 
@@ -83,10 +88,6 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 
 * Tue Dec 10 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.38-1
 - updated the theme to a simpler approach (cjuniorfox@gmail.com)
-=======
-* Tue Apr 15 2025 Junior <cjuniorfox@gmail.com> 1.0.38-1
-- Added audio sinalization waybar (cjuniorfox@gmail.com)
->>>>>>> ccbc3fe (Automatic commit of package [hyprland-shell-waybar] release [1.0.38-1].)
 
 * Mon Dec 09 2024 Junior <cjuniorfox@gmail.com> 1.0.37-1
 - updated the weather command (cjuniorfox@gmail.com)
@@ -115,23 +116,6 @@ install -m 755 start_waybar_hyprland $RPM_BUILD_ROOT%{_bindir}
 * Thu Aug 29 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.30-1
 - added click function for updates (cjuniorfox@gmail.com)
 
-* Thu Aug 29 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.29-1
-- fixed return type (cjuniorfox@gmail.com)
-
-* Fri Aug 23 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.28-1
-- added arrows for the update (cjuniorfox@gmail.com)
-
-* Wed Aug 14 2024 Junior <cjuniorfox@gmail.com> 1.0.27-1
-- added type as json (cjuniorfox@gmail.com)
-
-X# Create your changelog entry below:
-* Wed Aug 14 2024 Junior <cjuniorfox@gmail.com> 1.0.26-1
-- fix left click for checkupdate (cjuniorfox@gmail.com)
-
-* Wed Aug 14 2024 Junior_FOX <cjuniorfox@gmail.com> 1.0.25-1
-- updated the checkupdate (cjuniorfox@gmail.com)
-- fixed README formatting error (cjuniorfox@gmail.com)
-
 * Tue Jul 09 2024 Junior <cjuniorfox@gmail.com> 1.0.24-1
 - chore: removal for the checkupdate requirement (cjuniorfox@gmail.com)
 
@@ -141,23 +125,11 @@ X# Create your changelog entry below:
 * Thu May 02 2024 Junior <cjuniorfox@gmail.com> 1.0.22-1
 - Changed the icon.
 
-* Thu Dec 28 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.21-1
-- Updated dependencies.
-
-* Thu Dec 28 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.20-1
-- Updated dependencies.
-
 * Thu Nov 09 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.19-1
 - Changed menu icon.
 
-* Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.18-1
-- Minor updates.
-
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.17-1
 - Minor updates.
-
-* Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.16-1
-- Updated taskbar.
 
 * Tue Nov 07 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.15-1
 - Updated taskbar.
@@ -195,12 +167,6 @@ X# Create your changelog entry below:
 * Wed Sep 06 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.4-1
 - Added keyboard-changer dependency.
 - Refactored custom scripts, launcher, and GUI.
-
-* Tue Aug 29 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.3-1
-- Changed dependency.
-
-* Sat Aug 26 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.2-1
-- Added dependencies.
 
 * Sat Aug 26 2023 Junior_FOX <cjuniorfox@gmail.com> 1.0.1-1
 - Added dependencies.
