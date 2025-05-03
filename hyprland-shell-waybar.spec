@@ -41,7 +41,7 @@ install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install weather.py                   $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -Dm755 start_waybar_hyprland %{buildroot}%{_bindir}/start_waybar_hyprland
 install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprland-shell-waybar.service
-install -Dm644 hyprland-shell-waybar.desktop %{buildroot}%{_datadir}/applications/hyprland-shell-waybar.desktop
+install -Dm644 hyprland-shell-waybar.desktop %{buildroot}%{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
 
 %files
 %{xdgWaybar}/hyprland.json
@@ -53,7 +53,7 @@ install -Dm644 hyprland-shell-waybar.desktop %{buildroot}%{_datadir}/application
 %{xdgWaybar}/scripts/weather.py
 %{_bindir}/start_waybar_hyprland
 %{_userunitdir}/hyprland-shell-waybar.service
-%{_datadir}/applications/hyprland-shell-waybar.desktop
+%config(noreplace) %{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
 
 %changelog
 * Fri May 02 2025 Junior <cjuniorfox@gmail.com> 1.0.48-1
