@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.48
+Version:        1.0.49
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -56,6 +56,9 @@ install -Dm644 hyprland-shell-waybar.desktop %{buildroot}%{_sysconfdir}/xdg/auto
 %config(noreplace) %{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
 
 %changelog
+* Fri May 02 2025 Junior <cjuniorfox@gmail.com> 1.0.49-1
+- added .desktop to /etc/xdg/autostart (cjuniorfox@gmail.com)
+
 * Fri May 02 2025 Junior <cjuniorfox@gmail.com> 1.0.48-1
 - waybar as a service (cjuniorfox@gmail.com)
 
