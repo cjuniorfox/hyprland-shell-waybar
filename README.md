@@ -45,6 +45,35 @@ This project provides a set of customizations for Waybar to enhance the user exp
 4. **Configure Waybar:**
     Edit the Waybar configuration files as needed to match your system setup.
 
+## Fedora
+
+There's a RPM based package that can be installed on Fedora Linux using `copr`
+
+1. Add the `copr` repository
+   
+   ```bash
+   copr enable cjuniorfox/hyprland-desktop
+   ```
+
+2. Install package
+
+   ```bash
+   dnf install hyprland-shell-waybar
+   ```
+
+## Starting the waybar
+
+The recommended way is using the `systemd user` service. If you're using **Hyprland** or **Sway**, make use of `uswm` is prefered.
+
+```bash
+systemctl --user enable --now hyprland-shell-waybar
+```
+You can also exec directy.
+
+```bash
+start_waybar_hyprland
+```
+
 ## Configuration
 
 ### Waybar Configuration
