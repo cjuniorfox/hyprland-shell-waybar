@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.51
+Version:        1.0.52
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -56,6 +56,9 @@ install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprlan
 #%config(noreplace) %{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
 
 %changelog
+* Wed Sep 17 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.52-1
+- Updated the wheather grabber (cjuniorfox@gmail.com)
+
 * Wed Aug 06 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.51-1
 - removed disk from waybar (cjuniorfox@gmail.com)
 
