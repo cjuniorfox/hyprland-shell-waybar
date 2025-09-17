@@ -170,7 +170,9 @@ class WeatherForecastExtractor:
         return status
 
     def status_code(self):
-        self.__status_code = self.html_data("#regionHeader").attr("class").split(" ")[2].split("-")[2]
+        #self.__status_code = self.html_data("#regionHeader").attr("class").split(" ")[2].split("-")[2]
+        self.__status_code = self.html_data("div[data-testid='CurrentConditionsContainer'] span[data-testid='TemperatureValue'] + span svg[name]").attr("name")
+        #self.__status_code = "rain"
         return self.__status_code
 
     def icon(self):
