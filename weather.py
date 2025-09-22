@@ -8,33 +8,34 @@ from time import sleep
 
 
 weather_icons_fa = {
-    'mostly-clear-day': chr(0xF0599),         # Weather Sunny
-    'mostly-clear-night': chr(0xF0594),       # Weather Night
-    'partly-cloudy-day': chr(0xF0595),        # Weather Partially Cloudy
-    'partly-cloudy-night': chr(0xF0F31),      # Weather Night Partially Cloudy
-    'mostly-cloudy-day': chr(0xf013),         # FA Cloud (day)
-    'mostly-cloudy-night': chr(0xf013),       # FA Cloud (night)
-    'cloudy': '\uf0c2',                       # FA Cloud
-    'cloudy-foggy-day': '\uf0c2',             # FA Cloud
-    'cloudy-foggy-night': '\uf0c2',           # FA Cloud
-    'rainy-day': chr(0x1F326),                # FA Cloud-Sun-Rain
-    'rainy-night': '\ue323',                  # FA Night Alt rain mix
-    'scattered-showers-day': chr(0x1F326),    # FA Cloud-Sun-Rain
-    'scattered-showers-night': chr(0x1F326),  # FA Cloud-Moon-Rain
-    'showers': '\u26c6',                      # Rain
-    'snowy-icy-day': '\uf2dc',                # FA Snowflake
-    'snowy-icy-night': '\uf2dc',              # FA Snowflake
-    'snow': '\uf2dc',                         # FA Snowflake
-    'clear': chr(0xF0599),                    # Weather Sunny
-    'clear-night': chr(0xF0594),              # Weather Night
-    'severe': '\ue317',                       # FA Rain Wind
-    'thunderstorm': '\uf0e7',                 # FA Bolt
-    'wind': chr(0xf059d),                     # FA Weather Wind
-    'visibility': '\uf06e',                   # FA Eye
-    'humidity': '\uf043',                     # FA Humidity
-    'rain': '\uf0e9',                         # FA Weather Light raining
-    'feel': '\uf2c9',                         # FA Thermometer
-    'default': '\uf0c2',                      # FA Cloud
+    'mostly-clear-day': chr(0xF0599),        # Weather Sunny
+    'mostly-clear-night': chr(0xF0594),      # Weather Night
+    'sunny': chr(0xF0599),                   # Weather Sunny
+    'clear': chr(0xF0599),                   # Weather Sunny
+    'clear-night': chr(0xF0594),             # Weather Night
+    'partly-cloudy-day': chr(0xF0595),       # Weather Partly Cloudy Day
+    'partly-cloudy-night': chr(0xF0F31),     # Weather Partly Cloudy Night
+    'mostly-cloudy-day': chr(0xf013),        # FA Cloud (day)
+    'mostly-cloudy-night': chr(0xf013),      # FA Cloud (night)
+    'cloudy': '\uf0c2',                      # FA Cloud
+    'cloudy-foggy-day': '\u200B',            # Transparent icon
+    'cloudy-foggy-night': '\u200B',          # Transparent icon
+    'rainy-day': chr(0x1F326),               # FA Cloud-Sun-Rain
+    'rainy-night': chr(0x1F326),             # FA Cloud-Moon-Rain
+    'scattered-showers-day': chr(0x1F326),   # FA Cloud-Sun-Rain
+    'scattered-showers-night': chr(0x1F326), # FA Cloud-Moon-Rain
+    'showers': '\u26c6',                     # Rain
+    'snowy-icy-day': '\uf2dc',               # FA Snowflake
+    'snowy-icy-night': '\uf2dc',             # FA Snowflake
+    'snow': '\uf2dc',                        # FA Snowflake
+    'severe': '\ue317',                      # FA Rain Wind
+    'thunderstorm': '\uf0e7',                # FA Bolt
+    'wind': chr(0xf059d),                    # FA Weather Wind
+    'visibility': '\uf06e',                  # FA Eye
+    'humidity': '\uf043',                    # FA Humidity
+    'rain': '\uf0e9',                        # FA Weather Light Raining
+    'feel': '\uf2c9',                        # FA Thermometer
+    'default': '\uf0c2',                     # FA Cloud
 }
 
 weather_icons_emoji = {
@@ -45,7 +46,7 @@ weather_icons_emoji = {
     'clear-night': '🌙',
     'partly-cloudy-day': '⛅',
     'partly-cloudy-night': '☁️',
-    'mostly-cloudy-day': '⛅',
+    'mostly-cloudy-day': '☁️',
     'mostly-cloudy-night': '☁️',
     'cloudy': '☁️',
     'cloudy-foggy-day': '\u200B',      # Transparent icon
