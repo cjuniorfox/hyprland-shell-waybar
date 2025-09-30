@@ -5,7 +5,7 @@
 		"on-click-right" : "sleep .3 && ~/.config/rofi/menurun.sh"
 	},
 	"custom/weather": {
-		"exec": "python3 /etc/xdg/waybar/scripts/weather.py -o waybar",
+		"exec": "python3 -m weathergrabber.cli -o waybar",
 		"restart-interval": 600,
 		"return-type": "json"
 	},
