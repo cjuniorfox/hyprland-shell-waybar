@@ -2,7 +2,7 @@
 %define debug_package %{nil}
 
 Name:           hyprland-shell-waybar
-Version:        1.0.55
+Version:        1.0.56
 Release:        1%{?dist}
 Summary:        Waybar config and themes made for using with Hyprland
 Url:            https://pagure.io/%{srcname}
@@ -56,6 +56,10 @@ install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprlan
 #%config(noreplace) %{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
 
 %changelog
+* Wed Oct 01 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.56-1
+- updated the module to use the last version of weathergrabber
+  (cjuniorfox@gmail.com)
+
 * Tue Sep 30 2025 Junior_FOX <cjuniorfox@gmail.com> 1.0.55-1
 - switched to the new weathergrabber (cjuniorfox@gmail.com)
 
