@@ -41,7 +41,6 @@ install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install weather.py                   $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -Dm755 start_waybar_hyprland %{buildroot}%{_bindir}/start_waybar_hyprland
 install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprland-shell-waybar.service
-#install -Dm644 hyprland-shell-waybar.desktop %{buildroot}%{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
 
 %files
 %{xdgWaybar}/hyprland.json
