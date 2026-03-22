@@ -38,7 +38,6 @@ install modules.json                 $RPM_BUILD_ROOT%{xdgWaybar}
 install -m 755 dunst_notify          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 keys_blocked          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -m 755 close_window          $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
-install weather.py                   $RPM_BUILD_ROOT%{xdgWaybar}/scripts/
 install -Dm755 start_waybar_hyprland %{buildroot}%{_bindir}/start_waybar_hyprland
 install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprland-shell-waybar.service
 
@@ -49,7 +48,6 @@ install -Dm644 hyprland-shell-waybar.service %{buildroot}%{_userunitdir}/hyprlan
 %{xdgWaybar}/scripts/dunst_notify
 %{xdgWaybar}/scripts/keys_blocked
 %{xdgWaybar}/scripts/close_window
-%{xdgWaybar}/scripts/weather.py
 %{_bindir}/start_waybar_hyprland
 %{_userunitdir}/hyprland-shell-waybar.service
 #%config(noreplace) %{_sysconfdir}/xdg/autostart/hyprland-shell-waybar.desktop
