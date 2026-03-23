@@ -3,9 +3,7 @@
 	"height": 32,
 	"spacing": 6,
   "include": [
-		"/etc/xdg/waybar/modules.json",
-		"~/.config/waybar/quick-launcher.json",
-		"~/.config/waybar/modules-left.json"
+		"/etc/xdg/waybar/modules.json"
 	],
 	"modules-left": [
 		"custom/menu",
