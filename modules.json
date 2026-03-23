@@ -1,11 +1,7 @@
 {
-	"custom/menu": {
-		"format": "",
-		"on-click": "sleep .3 && ~/.config/rofi/menu.sh",
-		"on-click-right": "sleep .3 && ~/.config/rofi/menurun.sh"
-	},
+	
 	"custom/weather": {
-		"exec": "python3 -m weathergrabber -o waybar",
+		"exec": "weathergrabber -o waybar",
 		"restart-interval": 600,
 		"return-type": "json"
 	},
@@ -82,13 +78,6 @@
 		"return-type": "json",
 		"on-click": "hyprland-change-keyboard-layout",
 		"format": " {}"
-	},
-	"custom/updates": {
-		"exec": "python3 /usr/share/checkupdate/check_for_updates.py",
-		"interval": 600,
-		"on-click": "python3 /usr/share/checkupdate/update_menu.py",
-		"format": "{}",
-		"return-type": "json"
 	},
 	"custom/dunst": {
 		"exec": "/etc/xdg/waybar/scripts/dunst_notify",

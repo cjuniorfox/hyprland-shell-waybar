@@ -6,7 +6,6 @@
 		"/etc/xdg/waybar/modules.json"
 	],
 	"modules-left": [
-		"custom/menu",
 		"custom/firefox",
 		"custom/kitty",
 		"custom/nautilus",
@@ -25,7 +24,6 @@
 		"custom/dunst",
 		"custom/block_keybind",
 		"custom/hyprland_keyboard",
-		"custom/updates",
 		"pulseaudio",
 		"custom/audio_idle_inhibitor",
 		"battery",

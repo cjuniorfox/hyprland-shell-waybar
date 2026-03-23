@@ -1,0 +1,148 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "hyprland-keyboard-changer": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774184270,
+        "narHash": "sha256-Baly5pNpgeWKYiDEdtUqZm9S1ldBkZODEg0oPESwltE=",
+        "owner": "cjuniorfox",
+        "repo": "hyprland-keyboard-changer",
+        "rev": "36efb70a95236b829b77b53b57f1c3394ecb0032",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjuniorfox",
+        "ref": "nix",
+        "repo": "hyprland-keyboard-changer",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1774244481,
+        "narHash": "sha256-4XfMXU0DjN83o6HWZoKG9PegCvKvIhNUnRUI19vzTcQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4590696c8693fea477850fe379a01544293ca4e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "rofi-audio-output-selector": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774188900,
+        "narHash": "sha256-RwCyQMsjG/n6pvxSEwd8or9FL3YytA2gpN+02m70Q8Y=",
+        "owner": "cjuniorfox",
+        "repo": "rofi-audio-output-selector",
+        "rev": "6276d4d6c912edd3bbcf28a1f9dda8c58cb0bfff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjuniorfox",
+        "ref": "nix",
+        "repo": "rofi-audio-output-selector",
+        "type": "github"
+      }
+    },
+    "rofi-shutdown-menu": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774190264,
+        "narHash": "sha256-aPCloN84GEKVEPCm8/QxaxXZlJsQRhceNerkymSpxhE=",
+        "owner": "cjuniorfox",
+        "repo": "rofi-shutdown-menu",
+        "rev": "2221a0a8adf823e7a2fff06211d03ee60a44eebe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjuniorfox",
+        "ref": "nix",
+        "repo": "rofi-shutdown-menu",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "hyprland-keyboard-changer": "hyprland-keyboard-changer",
+        "nixpkgs": "nixpkgs",
+        "rofi-audio-output-selector": "rofi-audio-output-selector",
+        "rofi-shutdown-menu": "rofi-shutdown-menu",
+        "weathergrabber": "weathergrabber"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "weathergrabber": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774295659,
+        "narHash": "sha256-eX+2IaCdOQU2QjP5hsUitIXp2cmeNpDT9tnuX8STlHE=",
+        "owner": "cjuniorfox",
+        "repo": "weathergrabber-nix",
+        "rev": "17f1dc7c797fb7e8c8b742c8f367ddaf93196c40",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjuniorfox",
+        "repo": "weathergrabber-nix",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
