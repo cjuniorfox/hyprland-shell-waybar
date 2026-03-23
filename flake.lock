@@ -103,8 +103,7 @@
         "hyprland-keyboard-changer": "hyprland-keyboard-changer",
         "nixpkgs": "nixpkgs",
         "rofi-audio-output-selector": "rofi-audio-output-selector",
-        "rofi-shutdown-menu": "rofi-shutdown-menu",
-        "weathergrabber": "weathergrabber"
+        "rofi-shutdown-menu": "rofi-shutdown-menu"
       }
     },
     "systems": {
@@ -119,26 +118,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "weathergrabber": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1774295659,
-        "narHash": "sha256-eX+2IaCdOQU2QjP5hsUitIXp2cmeNpDT9tnuX8STlHE=",
-        "owner": "cjuniorfox",
-        "repo": "weathergrabber-nix",
-        "rev": "17f1dc7c797fb7e8c8b742c8f367ddaf93196c40",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cjuniorfox",
-        "repo": "weathergrabber-nix",
         "type": "github"
       }
     }

@@ -8,7 +8,6 @@
 , dbus
 , dunst
 , psmisc          # killall
-, weathergrabber
 , rofi-shutdown-menu
 , rofi-audio-output-selector
 , hyprland-keyboard-changer
@@ -31,7 +30,6 @@ stdenvNoCC.mkDerivation {
     dbus              # dbus-monitor used in dunst_notify
     dunst             # dunstctl used in dunst_notify
     psmisc            # killall used in start_waybar_hyprland
-    weathergrabber
     rofi-shutdown-menu
     rofi-audio-output-selector
     hyprland-keyboard-changer

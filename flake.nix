@@ -5,10 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     # Your custom packages — replace URLs once repos are available
-    weathergrabber = {
-      url = "github:cjuniorfox/weathergrabber-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     rofi-shutdown-menu = {
       url = "github:cjuniorfox/rofi-shutdown-menu/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +20,6 @@
   };
 
   outputs = { self, nixpkgs
-            , weathergrabber
             , rofi-shutdown-menu
             , rofi-audio-output-selector
             , hyprland-keyboard-changer
@@ -36,7 +31,6 @@
     {
       packages.${system} = rec {
         hyprland-shell-waybar = pkgs.callPackage ./default.nix {
-          weathergrabber            = weathergrabber.packages.${system}.default;
           rofi-shutdown-menu        = rofi-shutdown-menu.packages.${system}.default;
           rofi-audio-output-selector = rofi-audio-output-selector.packages.${system}.default;
           hyprland-keyboard-changer = hyprland-keyboard-changer.packages.${system}.default;
