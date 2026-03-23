@@ -61,6 +61,10 @@ stdenvNoCC.mkDerivation {
     substituteInPlace "$out/bin/start_waybar_hyprland" \
       --replace '/etc/xdg/waybar/' "$xdgWaybar/"
 
+    # Patch hard-coded paths in the waybar config
+    substituteInPlace "$xdgWaybar/hyprland.json" \
+      --replace '/etc/xdg/waybar/' "$xdgWaybar/"
+
     # Systemd user service
     install -Dm 644 hyprland-shell-waybar.service \
       "$out/lib/systemd/user/hyprland-shell-waybar.service"
