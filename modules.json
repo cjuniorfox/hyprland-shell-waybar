@@ -1,8 +1,8 @@
 {
 	"custom/menu": {
-		"format" : "",
-		"on-click" : "sleep .3 && ~/.config/rofi/menu.sh",
-		"on-click-right" : "sleep .3 && ~/.config/rofi/menurun.sh"
+		"format": "",
+		"on-click": "sleep .3 && ~/.config/rofi/menu.sh",
+		"on-click-right": "sleep .3 && ~/.config/rofi/menurun.sh"
 	},
 	"custom/weather": {
 		"exec": "python3 -m weathergrabber -o waybar",
@@ -10,51 +10,56 @@
 		"return-type": "json"
 	},
 	"clock": {
-        	"format": "{:%H:%M}",
-        	"format-alt": "{:%A, %B %d, %Y (%R)}",
-        	"tooltip-format": "<tt><small>{calendar}</small></tt>",
-        	"calendar": {
-                    "mode"          : "month",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "none",
-                    "on-scroll"     : 1,
-                    "on-click-right": "mode",
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                },
-        	"actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                }
-    	},
-	"disk":{
-		"format":" / {percentage_used}%"
+		"format": "{:%H:%M}",
+		"format-alt": "{:%A, %B %d, %Y (%R)}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"weeks-pos": "none",
+			"on-scroll": 1,
+			"on-click-right": "mode",
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"disk": {
+		"format": " / {percentage_used}%"
 	},
 	"pulseaudio": {
-    		"format": "{icon} {volume}%",
-    		"format-bluetooth": "{volume}% {icon}",
-    		"format-muted": "",
-    		"format-icons": {
-        		"headphone": "",
-        		"hands-free": "",
-        		"headset": "",
-        		"phone": "",
-        		"portable": "",
-        		"car": "",
-        		"default": ["", ""]
-    		},
-    		"scroll-step": 1,
-    		"on-click": "pavucontrol",
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol",
 		"on-click-right": "select_audio_output",
-    		"ignored-sinks": ["Easy Effects Sink"]
+		"ignored-sinks": [
+			"Easy Effects Sink"
+		]
 	},
 	"custom/audio_idle_inhibitor": {
 		"format": "{icon}",
@@ -68,42 +73,41 @@
 			"none": ""
 		}
 	},
-	"custom/block_keybind":{
+	"custom/block_keybind": {
 		"exec": "/etc/xdg/waybar/scripts/keys_blocked",
-		"on-click" : "hyprctl dispatch submap reset"
+		"on-click": "hyprctl dispatch submap reset"
 	},
-	"custom/hyprland_keyboard":{
+	"custom/hyprland_keyboard": {
 		"exec": "hyprland-get-keyboard-layout | jq -r '{text:(.short+\" \"+.short_variant),tooltip:(.keymap),alt:(.layout) }' -c --unbuffered",
-		"return-type":"json",
+		"return-type": "json",
 		"on-click": "hyprland-change-keyboard-layout",
-		"format":" {}"
+		"format": " {}"
 	},
-	"custom/updates": { 
-        	"exec": "python3 /usr/share/checkupdate/check_for_updates.py", 
-        	"interval": 600, 
-        	"on-click": "python3 /usr/share/checkupdate/update_menu.py",
-		"format" : "{}",
-		"return-type":"json"
-	
-    	},
-	"custom/dunst" : {
+	"custom/updates": {
+		"exec": "python3 /usr/share/checkupdate/check_for_updates.py",
+		"interval": 600,
+		"on-click": "python3 /usr/share/checkupdate/update_menu.py",
+		"format": "{}",
+		"return-type": "json"
+	},
+	"custom/dunst": {
 		"exec": "/etc/xdg/waybar/scripts/dunst_notify",
-    		"on-click": "dunstctl set-paused toggle",
-    		"restart-interval": 1,
+		"on-click": "dunstctl set-paused toggle",
+		"restart-interval": 1,
 		"on-scroll-down": "[ $(dunstctl is-paused) = false ] && dunstctl history-pop",
 		"on-click-right": "dunstctl close",
 		"on-scroll-up": "dunstctl close",
 		"return-type": "json",
-		"alt" : "Scroll the mouse wheel to show notifications"
+		"alt": "Scroll the mouse wheel to show notifications"
 	},
 	"custom/shutdown": {
-		"format":"",
+		"format": "",
 		"on-click": "sleep .3 && rofi-shutdown-menu"
 	},
 	"custom/close_window": {
-		"format":"{}",
+		"format": "{}",
 		"exec": "/etc/xdg/waybar/scripts/close_window",
-		"on-click": "hyprctl dispatch killactive"	
+		"on-click": "hyprctl dispatch killactive"
 	},
 	"hyprland/workspaces": {
 		"on-click": "activate",
@@ -112,27 +116,27 @@
 		"format": "{icon}",
 		"format-icons": {
 			"urgent": "",
-			"active":  "",
+			"active": "",
 			"default": ""
 		}
 	},
 	"sway/language": {
-    		"format": "{short} {variant}"
+		"format": "{short} {variant}"
 	},
-	"wlr/workspaces" : {
-        	"on-click": "activate",
-        	"active-only": false,
-        	"all-outputs": true,
-        	"format": "{icon}",
-    	 	"on-scroll-up": "hyprctl dispatch workspace e+1",
-     		"on-scroll-down": "hyprctl dispatch workspace e-1",
-        	"format-icons": {
+	"wlr/workspaces": {
+		"on-click": "activate",
+		"active-only": false,
+		"all-outputs": true,
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"format-icons": {
 			"urgent": "",
-			"active":  "",
+			"active": "",
 			"default": "",
-            	        "sort-by-number": true
-                }
-    	},
+			"sort-by-number": true
+		}
+	},
 	"wlr/taskbar": {
 		"format": "{icon}",
 		"tooltip-format": "{title}",
@@ -149,42 +153,107 @@
 			"Foot Server": "Terminal"
 		}
 	},
-
 	"idle_inhibitor": {
-      		"format": "{icon}",
-      		"format-icons": {
-        	"activated": "",
-        	"deactivated": ""
-      	}
-    },
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
 	"network": {
-		"format-icons":["","",""],
-    		"format": "{ifname}",
-    		"format-wifi": " {essid} ({signalStrength}%)",
-    		"format-ethernet": " {ipaddr}/{cidr}",
-    		"format-disconnected": "", 
-    		"tooltip-format": "{ifname} via {gwaddr} ",
-    		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    		"tooltip-format-ethernet": "{ifname} ",
-    		"tooltip-format-disconnected": "Disconnected"
+		"format-icons": [
+			"",
+			"",
+			""
+		],
+		"format": "{ifname}",
+		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-ethernet": " {ipaddr}/{cidr}",
+		"format-disconnected": "",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected"
 	},
 	"tray": {
-		"spacing" : 10
-    	},
-	"memory":{
-		"format":" {used:0.1f}G/{total:0.1f}G"
+		"spacing": 10
 	},
-	"cpu":{
-		"format":" {}%"
+	"memory": {
+		"format": " {used:0.1f}G/{total:0.1f}G"
+	},
+	"cpu": {
+		"format": " {}%"
 	},
 	"battery": {
-    		"states": {
-        		"warning": 30,
-        		"critical": 15
-    		},
-    		"format-charging": "{icon} {capacity}%",
-    		"format-plugged": "{icon} {capacity}%",
-    		"format": "{icon} {capacity}%",
-    		"format-icons": ["", "", "", "", ""]
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format-charging": "{icon} {capacity}%",
+		"format-plugged": "{icon} {capacity}%",
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"custom/firefox": {
+		"format": " ",
+		"on-click": "flatpak run org.mozilla.firefox",
+		"tooltip": false
+	},
+	"custom/kitty": {
+		"format": " ",
+		"on-click": "kitty",
+		"tooltip": false
+	},
+	"custom/gnome-software": {
+		"format": " ",
+		"on-click": "gnome-software",
+		"tooltip": false
+	},
+	"custom/nautilus": {
+		"format": " ",
+		"on-click": "nautilus",
+		"tooltip": false
+	},
+	"custom/steam": {
+		"format": " ",
+		"on-click": "flatpak run com.valvesoftware.Steam",
+		"tooltip": false
+	},
+	"custom/steambigpicture": {
+		"format": " ",
+		"on-click": "flatpak run com.valvesoftware.Steam -tenfoot",
+		"tooltip": false
+	},
+	"custom/hgl": {
+		"format": " ",
+		"on-rightclick": "~/.local/bin/hgl-hdr",
+		"on-click": "gio launch /var/lib/flatpak/exports/share/applications/com.heroicgameslauncher.hgl.desktop",
+		"tooltip": false
+	},
+	"custom/code": {
+		"format": " ",
+		"on-click": "flatpak run com.visualstudio.code",
+		"tooltip": false
+	},
+	"custom/virtmanager": {
+		"format": " ",
+		"on-click": "virt-manager",
+		"tooltip": false
+	},
+	"custom/outlook": {
+		"format": " ",
+		"on-click": "chrome --app=https://outlook.office.com/mail/",
+		"tooltip": false
+	},
+	"custom/teams": {
+		"format": " ",
+		"on-click": "chrome --app=https://teams.microsoft.com/v2/",
+		"tooltip": false
 	}
-}	
+}
